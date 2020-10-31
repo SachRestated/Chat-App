@@ -1,3 +1,4 @@
+const app = require('./app')
 const express = require('express')
 const path = require('path')
 const http = require('http')
@@ -6,7 +7,6 @@ const Filter = require('bad-words')
 const { generateMessage, generateLocationMessage } = require('../src/utils/messages')
 const {addUser, removeUser, getUser, getUsersInRoom} = require('./utils/user')
 
-const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 

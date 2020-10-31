@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
     <link rel="icon" href="/img/favicon.png">
     <link rel="stylesheet" href="/css/styles.min.css">
 
-    <title>Chat App</title>
 </head>
-<body>
 
+<body>
     <div class="centered-form">
         <div class="centered-form__box">
             <h1>Join</h1>
-            <form action="chat.html">
-                <label>Display Name</label>
-                <input type="text" name="username" placeholder="Display name" required>
+            <form id="form1" action="/chat.html">
+                <label>Display name</label>
+                <input id="username" type="text" name="username" placeholder="Display name" required>
                 <label>Room</label>
-                <input type="text" name="room" placeholder="Room" required>
-                <button>Join</button>
+                <input id="roomText" type="text" name="room" placeholder="Room">
+                <button style="margin-bottom: 10px;">Join</button>
             </form>
         </div>
     </div>
+
+    <script id="roomList-template" type="text/html">
+        <h5>Select An Active Room</h5>
+        <select id="activeRooms">
+            <option value=""></option>
+            {{#rooms}}
+            <option value="{{room}}">{{room}}</option>
+            {{/rooms}}
+        </select>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
+
 </html>
